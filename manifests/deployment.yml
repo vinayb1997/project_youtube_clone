@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: testing 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: testing
+  template:
+    metadata:
+      labels:
+        app: testing 
+    spec:
+      containers:
+        - name: testing 
+          image: hariacr21.azurecr.io/testing
+          ports:
+          - containerPort: 32321
